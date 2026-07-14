@@ -1,0 +1,54 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+
+  position: fixed;
+  left: 0;
+  top: 8rem;
+  bottom: 1rem;
+  z-index: 10;
+  width: 24rem;
+  overflow-y: auto;
+}
+
+.mainTabs,
+.footerTabs {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+.mainTabs a,
+.footerTabs a {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  padding: 1.4rem;
+  width: 100%;
+  border-radius: var(--radius-card);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.mainTabs a:hover,
+.footerTabs a:hover {
+  background: var(--color-surface-hover);
+  transform: translateX(4px);
+}
+
+.tabIcon {
+  color: var(--color-text-primary);
+  width: 2rem;
+  height: 2rem;
+}

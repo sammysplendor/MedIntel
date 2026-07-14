@@ -1,0 +1,75 @@
+/* ===== Global styles ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* (10px / 16px) x 100 = 62.5% */
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  font-family: "Geist";
+}
+
+h1 {
+  font-size: 3.8rem;
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 3rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 2.4rem;
+  color: var(--color-text-primary);
+}
+
+h4 {
+  font-size: 1.9rem;
+  color: var(--color-text-primary);
+}
+
+p {
+  font-size: 1.4rem;
+  color: var(--color-text-secondary);
+}
+
+small {
+  font-size: 1.1rem;
+}
+
+label {
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text-primary);
+  font-family: inherit;
+}
+
+input {
+  background: none;
+  outline: none;
+  border: 2px solid var(--color-border);
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  color: var(--color-text-primary);
+}
+
+button {
+  border: none;
+  font-family: inherit;
+  border-radius: var(--radius-button);
+}

@@ -1,0 +1,38 @@
+:root {
+  /* --- Brand & Base Colors --- */
+  --color-background: #0b0f19; /* Deep Slate canvas background */
+  --color-surface: #161b26; /* Dark Charcoal bento cards & panels */
+  --color-surface-hover: #1f2635; /* Slightly lighter for interactive cards */
+  --color-border: #242c3d; /* Subdued borders to define layout boundaries */
+
+  /* --- Brand Typography --- */
+  --color-text-primary: #f8fafc; /* Crisp white-gray for main metrics and headers */
+  --color-text-secondary: #94a3b8; /* Muted gray for labels, legends, and secondary text */
+  --color-text-muted: #64748b; /* Darker gray for timestamps and inactive tabs */
+
+  /* --- Core Semantic Colors (Health Indicators) --- */
+  --color-primary: #06b6d4; /* Health Cyan: Data streams, active selections, links */
+  --color-primary-glow: rgba(
+    6,
+    182,
+    212,
+    0.15
+  ); /* Soft background glow for maps/active states */
+
+  --color-success: #10b981; /* Emerald: Vaccination targets met, recovery rates high */
+  --color-success-glow: rgba(16, 185, 129, 0.15);
+
+  --color-warning: #f59e0b; /* Amber: Monitored mutation, rising localized case counts */
+  --color-warning-glow: rgba(245, 158, 11, 0.15);
+
+  --color-danger: #ef4444; /* Crimson: Active critical outbreaks, emergency alerts */
+  --color-danger-glow: rgba(239, 68, 68, 0.15);
+
+  /* --- UI Component Utilities --- */
+  --radius-card: 12px; /* Clean, modern pill/bento corner rounding */
+  --radius-button: 8px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-glow: 0 0 20px 0 var(--color-primary-glow); /* For high-priority UI focal points */
+}
