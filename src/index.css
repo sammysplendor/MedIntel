@@ -73,3 +73,9 @@ button {
   font-family: inherit;
   border-radius: var(--radius-button);
 }
+
+.mainContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

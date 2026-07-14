@@ -47,7 +47,7 @@ const Signin = () => {
     }
 
     setError("");
-    navigate("/MedIntel");
+    navigate("/Dashboard");
   };
 
   const handleChange = (e) => {
