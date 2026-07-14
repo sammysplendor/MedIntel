@@ -4,15 +4,14 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 2rem;
-  padding: 1rem;
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-card);
+  padding: 8rem 1rem 1rem;
+  border-right: 2px solid var(--color-border);
   background: var(--color-surface);
 
   position: fixed;
   left: 0;
-  top: 8rem;
-  bottom: 1rem;
+  top: 0;
+  bottom: -1rem;
   z-index: 10;
   width: 24rem;
   overflow-y: auto;

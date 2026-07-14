@@ -1,1 +1,18 @@
+/* ----- Header Section ----- */
+.welcomeHeader {
+  padding: 1.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}
 
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.currentDate {
+  color: var(--color-text-primary);
+}

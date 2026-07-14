@@ -8,7 +8,9 @@ const MainLayout = () => {
     <div className={styles.appContainer}>
       <TopNav />
 
-      <Sidebar />
+      <aside>
+        <Sidebar />
+      </aside>
 
       <main className={styles.contentArea}>
         <Outlet />
