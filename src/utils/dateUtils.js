@@ -14,7 +14,9 @@ export const getGreeting = () => {
     return "Good Morning";
   } else if (hour < 17) {
     return "Good Afternoon";
-  } else {
+  } else if (hour < 21) {
     return "Good Evening";
+  } else {
+    return "Good Night";
   }
 };

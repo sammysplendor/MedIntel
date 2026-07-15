@@ -1,12 +1,30 @@
 import styles from "../../styles/features styles/Overview.module.css";
 import { formatedDate, getGreeting } from "../../utils/dateUtils";
+import GlobalHealthCards from "../../components/GlobalHealthCards";
+import { useEffect } from "react";
+import { getDiseaseCases } from "../../api/diseaseApi";
 
 const Overview = () => {
+  const session = JSON.parse(localStorage.getItem("userSession"));
+
+  const userName = session.name.split(" ")[0] || "Guest";
+
+  useEffect(() => {
+    const fetchCases = async () => {
+      const cases = await getDiseaseCases();
+
+      console.log(cases);
+    };
+    fetchCases();
+  }, []);
+
   return (
     <main className="mainContent">
       {/* ========== Header section ========== */}
       <section className={styles.welcomeHeader}>
-        <h3>{getGreeting()}, Samuel</h3>
+        <h4>
+          {getGreeting()}, {userName}
+        </h4>
 
         <div className={styles.heading}>
           <h1>Global Health Overview</h1>
@@ -18,6 +36,9 @@ const Overview = () => {
 
         <small className={styles.currentDate}>{formatedDate()}</small>
       </section>
+
+      {/* ========== Global Health Cards section ========== */}
+      <GlobalHealthCards />
     </main>
   );
 };

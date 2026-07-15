@@ -22,7 +22,7 @@ const Signin = () => {
     // Pull saved user data from local storage
     const registeredUsers = JSON.parse(localStorage.getItem("users")) || [];
 
-    if (!registeredUsers) {
+    if (registeredUsers.length === 0) {
       alert("No account found with this email. Please sign up first.");
     }
 
@@ -32,19 +32,21 @@ const Signin = () => {
         formData.email.toLowerCase() === registeredUser.email.toLowerCase() &&
         formData.password === registeredUser.password,
     );
+
+    if (!user) {
+      setError("Wrong email or password");
+      return;
+    }
+
     const userSession = {
-      email: formData.email,
+      name: user.name,
+      email: user.email,
       loggedIn: true,
     };
 
     // Success! Save the active session
     localStorage.setItem("userSession", JSON.stringify(userSession));
     alert("You are successfully signed in.");
-
-    if (!user) {
-      setError("Wrong email or password");
-      return;
-    }
 
     setError("");
     navigate("/Dashboard");

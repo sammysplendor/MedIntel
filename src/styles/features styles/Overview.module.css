@@ -14,5 +14,5 @@
 }
 
 .currentDate {
-  color: var(--color-text-primary);
+  color: var(--color-text-muted);
 }
