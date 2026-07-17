@@ -1,22 +1,11 @@
 import styles from "../../styles/features styles/Overview.module.css";
 import { formatedDate, getGreeting } from "../../utils/dateUtils";
 import GlobalHealthCards from "../../components/GlobalHealthCards";
-import { useEffect } from "react";
-import { getDiseaseCases } from "../../api/diseaseApi";
 
 const Overview = () => {
   const session = JSON.parse(localStorage.getItem("userSession"));
 
   const userName = session.name.split(" ")[0] || "Guest";
-
-  useEffect(() => {
-    const fetchCases = async () => {
-      const cases = await getDiseaseCases();
-
-      console.log(cases);
-    };
-    fetchCases();
-  }, []);
 
   return (
     <main className="mainContent">

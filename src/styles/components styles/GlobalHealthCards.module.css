@@ -28,6 +28,6 @@
   color: var(--color-primary);
 }
 
-.trends {
-  color: var(--color-primary);
+.cardFooter {
+  color: var(--color-text-muted);
 }
