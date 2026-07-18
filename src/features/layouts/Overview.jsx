@@ -1,6 +1,7 @@
 import styles from "../../styles/features styles/Overview.module.css";
 import { formatedDate, getGreeting } from "../../utils/dateUtils";
-import GlobalHealthCards from "../../components/GlobalHealthCards";
+import GlobalHealthCards from "../../components/overviewComponents/GlobalHealthCards";
+import WorldMap from "../../components/overviewComponents/worldMap";
 
 const Overview = () => {
   const session = JSON.parse(localStorage.getItem("userSession"));
@@ -28,6 +29,9 @@ const Overview = () => {
 
       {/* ========== Global Health Cards section ========== */}
       <GlobalHealthCards />
+
+      {/* ========== World Map section ========== */}
+      <WorldMap />
     </main>
   );
 };

@@ -1,18 +1,15 @@
 import { Outlet } from "react-router-dom";
 import TopNav from "../../components/TopNav";
-import styles from "../../styles/features styles/Dashboard.module.css";
 import Sidebar from "../../components/Sidebar";
 
 const MainLayout = () => {
   return (
-    <div className={styles.appContainer}>
+    <div>
       <TopNav />
 
-      <aside>
-        <Sidebar />
-      </aside>
+      <Sidebar />
 
-      <main className={styles.contentArea}>
+      <main>
         <Outlet />
       </main>
     </div>

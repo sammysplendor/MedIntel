@@ -79,4 +79,7 @@ button {
   height: 100vh;
   padding-inline: 25rem 1rem;
   margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
