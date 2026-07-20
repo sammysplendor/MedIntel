@@ -1,0 +1,49 @@
+.mapSection {
+  display: grid;
+  grid-template-columns: 3.5fr 1fr;
+  column-gap: 2rem;
+}
+
+.mapContainer {
+  width: 100%;
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  padding: 2rem 1rem;
+  border: 2px solid var(--color-border);
+}
+
+.countries {
+  fill: var(--color-primary-glow);
+  stroke: var(--color-text-muted);
+  stroke-width: 0.4;
+  outline: none;
+  cursor: pointer;
+}
+
+.countries:hover {
+  fill: var(--color-primary);
+  outline: none;
+}
+
+.countries:active {
+  fill: var(--color-primary);
+  outline: none;
+}
+
+.countryDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 2rem;
+
+  p {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    span {
+      color: var(--color-text-primary);
+      font-size: 1.8rem;
+    }
+  }
+}
