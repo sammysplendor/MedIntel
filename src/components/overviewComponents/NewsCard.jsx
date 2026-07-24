@@ -4,6 +4,7 @@ import { getNewsBadge } from "../../utils/badge";
 
 const NewsCard = ({ article }) => {
   const badge = getNewsBadge(article.title);
+  const articleImage = article.image;
 
   return (
     <div className="w-full flex flex-col gap-4 bg-surface border-2 border-solid border-border rounded-card p-8">
@@ -11,7 +12,11 @@ const NewsCard = ({ article }) => {
         {badge}
       </span>
 
-      <img />
+      <img
+        src={articleImage}
+        alt="Article image"
+        className="h-96 object-cover rounded-card"
+      />
 
       <div className="flex flex-col gap-2">
         <h4>{article.title}</h4>
