@@ -1,85 +1,132 @@
+@import "tailwindcss";
+
+/* ===== Custom Tailwind v4 Theme Configuration ===== */
+@theme {
+  /* --- Brand & Base Colors --- */
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-hover: var(--color-surface-hover);
+  --color-border: var(--color-border);
+
+  /* --- Typography Colors --- */
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+
+  /* --- Core Semantic Colors (Health Indicators) --- */
+  --color-primary: var(--color-primary);
+  --color-primary-glow: var(--color-primary-glow);
+
+  --color-success: var(--color-success);
+  --color-success-glow: var(--color-success-glow);
+
+  --color-warning: var(--color-warning);
+  --color-warning-glow: var(--color-warning-glow);
+
+  --color-danger: var(--color-danger);
+  --color-danger-glow: var(--color-danger-glow);
+
+  /* --- Border Radius Utilities --- */
+  --radius-card: var(--radius-card);
+  --radius-button: var(--radius-button);
+
+  /* --- Shadow Utilities --- */
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-glow: var(--shadow-glow);
+}
+
 /* ===== Global styles ===== */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-html {
-  font-size: 62.5%; /* (10px / 16px) x 100 = 62.5% */
-  scroll-behavior: smooth;
-}
+  html {
+    font-size: 62.5%; /* (10px / 16px) x 100 = 62.5% */
+    scroll-behavior: smooth;
+  }
 
-body {
-  background-color: var(--color-background);
-  font-family: "Geist";
-}
+  body {
+    background-color: var(--color-background);
+    font-family: "Geist";
+  }
 
-h1 {
-  font-size: 3.8rem;
-  color: var(--color-text-primary);
-  font-weight: 600;
-}
+  h1 {
+    font-size: 3.8rem;
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
 
-h2 {
-  font-size: 3rem;
-  color: var(--color-text-primary);
-  font-weight: 500;
-}
+  h2 {
+    font-size: 3rem;
+    color: var(--color-text-primary);
+    font-weight: 500;
+  }
 
-h3 {
-  font-size: 2.4rem;
-  color: var(--color-text-primary);
-  font-weight: 400;
-}
+  h3 {
+    font-size: 2.4rem;
+    color: var(--color-text-primary);
+    font-weight: 400;
+  }
 
-h4 {
-  font-size: 1.9rem;
-  color: var(--color-text-primary);
-}
+  h4 {
+    font-size: 1.9rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+  }
 
-p {
-  font-size: 1.4rem;
-  color: var(--color-text-secondary);
-}
+  h5 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
 
-small {
-  font-size: 1.1rem;
-}
+  p {
+    font-size: 1.4rem;
+    color: var(--color-text-secondary);
+  }
 
-label {
-  font-size: 1.5rem;
-  color: var(--color-text-primary);
-}
+  small {
+    font-size: 1.1rem;
+  }
 
-a {
-  text-decoration: none;
-  color: var(--color-text-primary);
-  font-family: inherit;
-}
+  label {
+    font-size: 1.5rem;
+    color: var(--color-text-primary);
+  }
 
-input {
-  background: none;
-  outline: none;
-  border: 2px solid var(--color-border);
-  width: 100%;
-  padding: 1rem;
-  border-radius: 0.8rem;
-  color: var(--color-text-primary);
-}
+  a {
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-family: inherit;
+  }
 
-button {
-  border: none;
-  font-family: inherit;
-  border-radius: var(--radius-button);
-}
+  input {
+    background: none;
+    outline: none;
+    border: 2px solid var(--color-border);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    color: var(--color-text-primary);
+  }
 
-.mainContent {
-  height: 100vh;
-  padding-inline: 25rem 1rem;
-  margin-top: 8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+  button {
+    border: none;
+    font-family: inherit;
+    border-radius: var(--radius-button);
+  }
+
+  .mainContent {
+    height: 100vh;
+    padding-inline: 25rem 1rem;
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
 }
