@@ -1,11 +1,14 @@
 import { ArrowRight } from "lucide-react";
 import { formatPublishedDate } from "../../utils/dateUtils";
+import { getNewsBadge } from "../../utils/badge";
 
 const NewsCard = ({ article }) => {
+  const badge = getNewsBadge(article.title);
+
   return (
     <div className="w-full flex flex-col gap-4 bg-surface border-2 border-solid border-border rounded-card p-8">
       <span className="flex items-center gap-4 font-bold text-[1.3rem] text-text-muted">
-        Outbreak
+        {badge}
       </span>
 
       <img />
@@ -19,7 +22,9 @@ const NewsCard = ({ article }) => {
       </div>
 
       <div className="flex justify-between items-center">
-        <span className="text-text-primary">WHO</span>
+        <span className="text-text-primary font-bold text-[1.2rem]">
+          {article.source.name}
+        </span>
         <span className="text-primary flex items-center gap-1 text-[1.4rem] cursor-pointer transition-transform duration-300 hover:translate-x-2">
           Read More <ArrowRight />
         </span>
