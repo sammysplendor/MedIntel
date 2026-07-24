@@ -30,7 +30,10 @@ const NewsCard = ({ article }) => {
         <span className="text-text-primary font-bold text-[1.2rem]">
           {article.source.name}
         </span>
-        <span className="text-primary flex items-center gap-1 text-[1.4rem] cursor-pointer transition-transform duration-300 hover:translate-x-2">
+        <span
+          className="text-primary flex items-center gap-1 text-[1.4rem] cursor-pointer transition-transform duration-300 hover:translate-x-2"
+          title="Read full news"
+        >
           Read More <ArrowRight />
         </span>
       </div>

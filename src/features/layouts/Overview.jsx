@@ -3,6 +3,7 @@ import { formatedDate, getGreeting } from "../../utils/dateUtils";
 import GlobalHealthCards from "../../components/overviewComponents/GlobalHealthCards";
 import WorldMap from "../../components/overviewComponents/worldMap";
 import HealthNews from "../../components/overviewComponents/HealthNews";
+import HealthTrends from "../../components/overviewComponents/HealthTrends";
 
 const Overview = () => {
   const session = JSON.parse(localStorage.getItem("userSession"));
@@ -28,14 +29,17 @@ const Overview = () => {
         <small className={styles.currentDate}>{formatedDate()}</small>
       </section>
 
-      {/* ========== Global Health Cards section ========== */}
+      {/* ===== Global Health Cards section ===== */}
       <GlobalHealthCards />
 
-      {/* ========== World Map section ========== */}
+      {/* ===== World Map section ===== */}
       <WorldMap />
 
       {/* ===== Global Health Intelligence section ===== */}
       <HealthNews />
+
+      {/* ===== Global Health Trends section ===== */}
+      <HealthTrends />
     </main>
   );
 };

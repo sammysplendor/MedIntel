@@ -1,4 +1,3 @@
-import styles from "../../styles/components styles/overview/HealthNews.module.css";
 import NewsCard from "./NewsCard";
 import { useState, useEffect } from "react";
 import { getHealthNews } from "../../api/newsApi";
@@ -10,20 +9,16 @@ const HealthNews = () => {
     const fetchNews = async () => {
       const newsArticles = await getHealthNews();
 
-      const uniqueArticles = newsArticles?.filter(
-        (article, index, self) =>
-          index === self.findIndex((a) => a.title === article.title),
-      );
-      console.log(uniqueArticles);
+      console.log("Full newsApi response:", newsArticles);
 
-      setNews(uniqueArticles || []);
+      setNews(newsArticles.articles || []);
     };
 
     fetchNews();
   }, []);
   return (
-    <section className={styles.sectionContainer}>
-      <div className={styles.heading}>
+    <section className="flex flex-col gap-6">
+      <div>
         <h3>Global Health Intelligence</h3>
         <p>
           Latest outbreaks, medical breakthroughs, policy updates, and public
@@ -31,7 +26,7 @@ const HealthNews = () => {
         </p>
       </div>
 
-      <div className={styles.sectionContent}>
+      <div className="flex flex-col gap-4">
         {news?.map((article) => (
           <NewsCard key={article.id} article={article} />
         ))}

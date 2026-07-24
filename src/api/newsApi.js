@@ -14,11 +14,11 @@ export const getHealthNews = async () => {
         max: 10,
       },
     });
-    localStorage.setItem("health_news", JSON.stringify(response.data.articles));
-    console.log(response.data);
+    localStorage.setItem("health_news", JSON.stringify(response.data));
 
-    return response.data.articles;
+    return response.data;
   } catch (error) {
     console.error("Error fetching health news data:", error);
+    return [];
   }
 };
