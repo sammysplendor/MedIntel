@@ -68,11 +68,12 @@ export const getCountryHealthData = async (countryCode, countryName) => {
         ),
       ]);
 
-    console.log({
-      population: populationResponse.data,
-      lifeExpectancy: lifeResponse.data,
-      healthExpenditure: healthResponse.data,
-    });
+    /* console.log({
+        population: populationResponse.data,
+        lifeExpectancy: lifeResponse.data,
+        healthExpenditure: healthResponse.data,
+      });
+    */
 
     const getLatestRecord = (records) => {
       return records.find((item) => item.value !== null)?.value ?? "N/A";
@@ -86,5 +87,53 @@ export const getCountryHealthData = async (countryCode, countryName) => {
     };
   } catch (error) {
     console.error("Error fetching country health data:", error);
+  }
+};
+
+export const getGlobalHealthData = async () => {
+  try {
+    const [lifeResponse, healthResponse, infantMortalityResponse] =
+      await Promise.all([
+        worldbankApi.get(
+          `/country/WLD/indicator/${INDICATORS.LIFE_EXPECTANCY}`,
+        ),
+        worldbankApi.get(
+          `/country/WLD/indicator/${INDICATORS.HEALTH_EXPENDITURE}`,
+        ),
+        worldbankApi.get(
+          `/country/WLD/indicator/${INDICATORS.INFANT_MORTALITY}`,
+        ),
+      ]);
+
+    console.log({
+      lifeExpectancy: lifeResponse,
+      healthExpenditure: healthResponse,
+      infantMortality: infantMortalityResponse,
+    });
+
+    const lifeData = lifeResponse.data[1];
+    const healthData = healthResponse.data[1];
+    const infantMortalityData = infantMortalityResponse.data[1];
+
+    const chartData = lifeData.map((item) => {
+      const year = item.date;
+
+      const healthItem = healthData.find((h) => h.date === year);
+      const infantItem = infantMortalityData.find((i) => i.date === year);
+
+      return {
+        year,
+
+        lifeExpectancy: item.value,
+
+        healthExpenditure: healthItem?.value,
+
+        infantMortality: infantItem?.value,
+      };
+    });
+
+    return chartData;
+  } catch (error) {
+    console.error("Error fetching global health data:", error);
   }
 };
