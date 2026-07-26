@@ -4,7 +4,7 @@ import { getGlobalHealthData } from "../api/worldbankApi";
 const useGlobalHealthTrends = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedYears, setSelectedYears] = useState(20);
+  const [selectedYears, setSelectedYears] = useState(10);
 
   useEffect(() => {
     const loadData = async () => {

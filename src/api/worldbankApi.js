@@ -90,7 +90,7 @@ export const getCountryHealthData = async (countryCode, countryName) => {
   }
 };
 
-export const getGlobalHealthData = async () => {
+export const getGlobalHealthData = async (years) => {
   try {
     const [lifeResponse, healthResponse, infantMortalityResponse] =
       await Promise.all([
@@ -132,7 +132,9 @@ export const getGlobalHealthData = async () => {
       };
     });
 
-    return chartData;
+    chartData.sort((a, b) => Number(a.year) - Number(b.year));
+
+    return chartData.slice(-years);
   } catch (error) {
     console.error("Error fetching global health data:", error);
   }

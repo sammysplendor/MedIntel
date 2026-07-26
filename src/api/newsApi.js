@@ -1,9 +1,12 @@
 import { newsApi } from "./axiosInstance";
 
 export const getHealthNews = async () => {
-  const cachedNews = localStorage.getItem("health_news");
-  if (cachedNews) {
-    return JSON.parse(cachedNews);
+  const cachedNews = JSON.parse(localStorage.getItem("health_news"));
+
+  const TEN_MINUTES = 10 * 60 * 1000;
+
+  if (cachedNews && Date.now() - cachedNews.timestamp < TEN_MINUTES) {
+    return cachedNews.data;
   }
 
   try {
@@ -14,7 +17,13 @@ export const getHealthNews = async () => {
         max: 10,
       },
     });
-    localStorage.setItem("health_news", JSON.stringify(response.data));
+    localStorage.setItem(
+      "health_news",
+      JSON.stringify({
+        timestamp: Date.now(),
+        data: response.data,
+      }),
+    );
 
     return response.data;
   } catch (error) {
