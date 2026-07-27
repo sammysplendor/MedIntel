@@ -4,6 +4,7 @@ import GlobalHealthCards from "../../components/overviewComponents/GlobalHealthC
 import WorldMap from "../../components/overviewComponents/worldMap";
 import HealthNews from "../../components/overviewComponents/HealthNews";
 import HealthTrends from "../../components/overviewComponents/HealthTrends";
+import Footer from "../../components/Footer";
 
 const Overview = () => {
   const session = JSON.parse(localStorage.getItem("userSession"));
@@ -40,6 +41,9 @@ const Overview = () => {
 
       {/* ===== Global Health Trends section ===== */}
       <HealthTrends />
+
+      {/* ===== FOOTER ===== */}
+      <Footer />
     </main>
   );
 };

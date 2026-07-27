@@ -128,7 +128,9 @@ const WorldMap = () => {
           <p>
             Health Expenditure (% of GDP):{" "}
             <span>
-              {selectedCountry ? selectedCountry?.healthExpenditure : "--"}
+              {selectedCountry
+                ? `${selectedCountry?.healthExpenditure.toFixed(1)}%`
+                : "--"}
             </span>
           </p>
         </div>

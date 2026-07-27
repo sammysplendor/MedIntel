@@ -1,0 +1,41 @@
+.top {
+  display: flex;
+  flex-direction: column;
+}
+
+.sourcesContainer {
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.5rem;
+
+  h5 {
+    margin-bottom: 0.5rem;
+    color: var(--color-text-secondary);
+  }
+}
+
+.sources {
+  display: flex;
+  gap: 5rem;
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.sourceIcon {
+  width: 1.6rem;
+  height: 1.6rem;
+  color: var(--color-primary);
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  small {
+    color: var(--color-text-primary);
+  }
+}

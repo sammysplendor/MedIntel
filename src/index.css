@@ -138,3 +138,12 @@
     gap: 3rem;
   }
 }
+
+footer {
+  border-top: 6px solid var(--color-border);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--color-surface);
+}
