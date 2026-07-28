@@ -21,8 +21,8 @@ const Sidebar = () => {
           <LayoutDashboard className={styles.tabIcon} /> Dashboard
         </NavLink>
 
-        <NavLink to="Disease_trends" className={getLinkClass}>
-          <TrendingUpDownIcon className={styles.tabIcon} /> Disease Trends
+        <NavLink to="Health_Analytics" className={getLinkClass}>
+          <TrendingUpDownIcon className={styles.tabIcon} /> Health Analytics
         </NavLink>
 
         <NavLink to="Countries" className={getLinkClass}>
