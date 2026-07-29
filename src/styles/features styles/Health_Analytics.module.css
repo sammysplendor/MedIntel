@@ -1,0 +1,23 @@
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.selectors {
+  display: flex;
+  justify-content: space-between;
+}
+
+.selector {
+  background: var(--color-surface);
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.selector:hover {
+  background: var(--color-surface-hover);
+}

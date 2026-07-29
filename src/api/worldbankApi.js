@@ -4,8 +4,13 @@ import { worldbankApi } from "./axiosInstance";
 export const getCountries = async () => {
   try {
     const response = await worldbankApi.get("/country");
+    console.log(response.data);
 
-    return response.data[0].total;
+    // return response.data[1];
+    return {
+      total: response.data[0].total,
+      list: response.data[1],
+    };
   } catch (error) {
     console.error("Error fetching countries:", error);
   }

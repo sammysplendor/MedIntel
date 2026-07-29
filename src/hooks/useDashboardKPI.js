@@ -30,14 +30,14 @@ const useDashboardKPI = () => {
         ]);
 
         console.log({
-          countries: countriesResponse,
+          countries: countriesResponse.total,
           lifeExpectancy: lifeExpectancyResponse,
           infantMortality: infantMortalityResponse,
           healthExpenditure: healthExpenditureResponse,
         });
 
         setKPIData({
-          countries: countriesResponse,
+          countries: countriesResponse.total,
           lifeExpectancy: lifeExpectancyResponse,
           infantMortality: infantMortalityResponse,
           healthExpenditure: healthExpenditureResponse,

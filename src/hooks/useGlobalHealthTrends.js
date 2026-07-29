@@ -8,7 +8,6 @@ const useGlobalHealthTrends = () => {
 
   useEffect(() => {
     const loadData = async () => {
-      console.log("loadData started");
       setLoading(true);
       const fetchedData = await getGlobalHealthData(selectedYears);
 
