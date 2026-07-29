@@ -127,6 +127,7 @@
     font-family: inherit;
     cursor: pointer;
     background: var(--color-background);
+    outline: none;
   }
 
   .mainContent {

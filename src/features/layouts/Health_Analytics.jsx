@@ -19,7 +19,6 @@ const Health_Analytics = () => {
   return (
     <main className="mainContent">
       {/* ========== HEADER SECTION ========== */}
-
       <section className={styles.pageHeader}>
         <div className={styles.left}>
           <h1>Health Analytics</h1>
@@ -34,6 +33,7 @@ const Health_Analytics = () => {
 
       {/* ========== SELECTOR SECTION ========== */}
       <section className={styles.selectors}>
+        {/* ----- Indicator ----- */}
         <select className={styles.selector} name="indicator">
           <option value="Indicator">Indicator</option>
 
@@ -44,14 +44,26 @@ const Health_Analytics = () => {
           ))}
         </select>
 
-        <select className={styles.selector} name="country">
-          <option value="country">Country</option>
+        {/* ----- Country ----- */}
+        <input
+          type="text"
+          list="country-options"
+          placeholder="Choose or type a country"
+          className={styles.countrySearch}
+        />
 
+        <datalist id="country-options">
           {countryList.map((country) => (
-            <option key={country.id} value={country.id}>
-              {country.name}
-            </option>
+            <option key={country.id} value={country.name} />
           ))}
+        </datalist>
+
+        {/* ----- Time Range ----- */}
+        <select className={styles.selector} name="time_range">
+          <option value="time range">Time Range</option>
+          <option value={10}>10 Years</option>
+          <option value={20}>20 Years</option>
+          <option value={30}>30 Years</option>
         </select>
       </section>
 
