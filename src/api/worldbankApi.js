@@ -73,13 +73,6 @@ export const getCountryHealthData = async (countryCode, countryName) => {
         ),
       ]);
 
-    /* console.log({
-        population: populationResponse.data,
-        lifeExpectancy: lifeResponse.data,
-        healthExpenditure: healthResponse.data,
-      });
-    */
-
     const getLatestRecord = (records) => {
       return records.find((item) => item.value !== null)?.value ?? "N/A";
     };
@@ -142,5 +135,17 @@ export const getGlobalHealthData = async (years) => {
     return chartData.slice(-years);
   } catch (error) {
     console.error("Error fetching global health data:", error);
+  }
+};
+
+export const getIndicatorHistory = async (countryCode, indicatorCode) => {
+  try {
+    const response = await worldbankApi.get(
+      `/country/${countryCode}/indicator/${indicatorCode}`,
+    );
+    console.log("Fetching for:", countryCode, indicatorCode);
+    return response.data[1] ?? [];
+  } catch (error) {
+    console.error("Error fetching country indicator history:", error);
   }
 };
