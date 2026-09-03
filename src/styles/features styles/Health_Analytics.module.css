@@ -31,3 +31,7 @@
 .selector:hover {
   background: var(--color-surface-hover);
 }
+
+.historySection ul {
+  padding: 1rem 2rem;
+}

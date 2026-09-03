@@ -17,7 +17,7 @@ const Health_Analytics = () => {
 
   const { error, loading, records, latestRecord } = useHealthAnalytics(
     selectedCountryCode,
-    selectedIndicator.code,
+    selectedIndicator?.code,
   );
 
   // ===== Fetch countries
@@ -110,6 +110,14 @@ const Health_Analytics = () => {
         </select>
       </section>
 
+      {/* ===== ERROR DISPLAY ===== */}
+      {error && (
+        <div className="font-danger">
+          Failed to load health analytics:{" "}
+          {error.message || "An error occurred"}
+        </div>
+      )}
+
       {/* ====== INFORMATION CARD SECTION ===== */}
       <InfoCard
         indicator={selectedIndicator}
@@ -117,6 +125,22 @@ const Health_Analytics = () => {
         latestRecord={latestRecord}
         loading={loading}
       />
+
+      {/* ===== HISTORICAL RECORDS SECTION ===== */}
+      <section className={styles.historySection}>
+        <h2>Historical Data</h2>
+        {records.length > 0 ? (
+          <ul>
+            {records.map((item, index) => (
+              <li key={item.date || index}>
+                <span>{item.date}:</span> {item.value ?? "N/A"}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No historical records found.</p>
+        )}
+      </section>
 
       {/* ===== FOOTER ===== */}
       <Footer />

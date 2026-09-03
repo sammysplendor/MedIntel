@@ -105,6 +105,12 @@
     font-family: inherit;
   }
 
+  li {
+    color: var(--color-text-primary);
+    font-family: inherit;
+    font-size: 1.4rem;
+  }
+
   input {
     background: none;
     outline: none;
