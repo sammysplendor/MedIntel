@@ -22,6 +22,7 @@
     "react-simple-maps": "^3.0.0",
     "react-tooltip": "^6.0.8",
     "recharts": "^3.10.0",
+    "sonner": "^2.0.8",
     "world-atlas": "^2.0.2"
   },
   "devDependencies": {

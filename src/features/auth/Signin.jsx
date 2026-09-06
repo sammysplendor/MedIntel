@@ -2,6 +2,7 @@ import "./auth.css";
 import medintelLogo from "../../assets/medintel_logo.png";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 const Signin = () => {
   const [formData, setFormData] = useState({
@@ -23,7 +24,7 @@ const Signin = () => {
     const registeredUsers = JSON.parse(localStorage.getItem("users")) || [];
 
     if (registeredUsers.length === 0) {
-      alert("No account found with this email. Please sign up first.");
+      toast.error("No account found with this email. Please sign up first.");
     }
 
     // Compare inputs against the saved data
@@ -46,10 +47,10 @@ const Signin = () => {
 
     // Success! Save the active session
     localStorage.setItem("userSession", JSON.stringify(userSession));
-    alert("You are successfully signed in.");
 
     setError("");
     navigate("/Dashboard");
+    toast.success("Signed in successfully!");
   };
 
   const handleChange = (e) => {

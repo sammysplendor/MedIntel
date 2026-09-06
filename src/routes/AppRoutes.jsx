@@ -8,6 +8,7 @@ import Countries from "../features/layouts/Countries";
 import Vaccinations from "../features/layouts/Vaccinations";
 import Health_news from "../features/layouts/Health_news";
 import Logout from "../features/layouts/Logout";
+import { Toaster } from "sonner";
 
 const AppRoutes = () => {
   return (
@@ -24,6 +25,8 @@ const AppRoutes = () => {
           <Route path="Logout" element={<Logout />} />
         </Route>
       </Routes>
+
+      <Toaster position="bottom-right" richColors />
     </BrowserRouter>
   );
 };

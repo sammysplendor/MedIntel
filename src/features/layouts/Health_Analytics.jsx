@@ -5,6 +5,7 @@ import { getCountries } from "../../api/worldbankApi";
 import { useEffect, useState } from "react";
 import InfoCard from "../../components/healthAnalyticsComponents/InfoCard";
 import useHealthAnalytics from "../../hooks/useHealthAnalytics";
+import TrendChart from "../../components/healthAnalyticsComponents/TrendChart";
 
 const Health_Analytics = () => {
   // ===== Setting states
@@ -19,6 +20,8 @@ const Health_Analytics = () => {
     selectedCountryCode,
     selectedIndicator?.code,
   );
+
+  const hasSelection = selectedIndicator && typedCountryName;
 
   // ===== Fetch countries
   useEffect(() => {
@@ -126,21 +129,14 @@ const Health_Analytics = () => {
         loading={loading}
       />
 
-      {/* ===== HISTORICAL RECORDS SECTION ===== */}
-      <section className={styles.historySection}>
-        <h2>Historical Data</h2>
-        {records.length > 0 ? (
-          <ul>
-            {records.map((item, index) => (
-              <li key={item.date || index}>
-                <span>{item.date}:</span> {item.value ?? "N/A"}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No historical records found.</p>
-        )}
-      </section>
+      {/* ===== HISTORICAL TREND SECTION ===== */}
+
+      <TrendChart
+        indicatorOptions={selectedIndicator}
+        records={records}
+        countryName={typedCountryName}
+        hasSelection={hasSelection}
+      />
 
       {/* ===== FOOTER ===== */}
       <Footer />
